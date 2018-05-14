@@ -88,14 +88,14 @@ public class SparkStreamingJob {
 		kafkaParams.put("metadata.broker.list", "localhost:9092");
 	}
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		
 		HBaseWriter writer = new HBaseWriter("localhost", 2181);
 		Set<String> topics = new HashSet<String>();
 		topics.add("deviceData");
 		SparkStreamingJob sparkTest = new SparkStreamingJob("deviceData", "SparkTest", "local[*]", topics, new Duration(1000), writer);
 		sparkTest.startStreaming();
-	}
+	}*/
 
 	public void startStreaming() {
 		JavaPairInputDStream<String, String> directKafkaStream = KafkaUtils.createDirectStream(ssc,
